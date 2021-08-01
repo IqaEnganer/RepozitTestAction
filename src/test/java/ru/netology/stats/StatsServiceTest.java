@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class StatsServiceTest {
     @Test
-    public long salesMinimumMonth() { //Месяц с минимальными продажами
+    public void salesMinimumMonth() { //Месяц с минимальными продажами
         StatsService service = new StatsService();
         long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int actual = service.minSales(arr);
