@@ -39,7 +39,15 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long actual = service.aboveAverageSale(arr);
-        long expected = 15;
+        long expected = 5;
+        assertEquals(expected , actual);
+    }
+    @Test
+    public void belowAverageSale(){
+        StatsService service = new StatsService();
+        long[] arr = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long actual = service.aboveAverageSale(arr);
+        long expected = 5;
         assertEquals(expected , actual);
     }
 }

@@ -31,29 +31,27 @@ public class StatsService {
         }
         return sum;
     }
-
-    public long averageSales(long[] sales) { // Средние продажи за 12 месяцев
-        long sum = 0;
-        long average;
-        for (int i = 0; i < sales.length; i++) {
-            sum += sales[i];
+     public long averageSales(long[] sales) { // Средние продажи за 12 месяцев
+             long averageSales = sumAllSales(sales) /sales.length;
+             return averageSales;
         }
-        average = sum / sales.length;
-        return average;
 
+    public long aboveAverageSale(long[] sales) { // Кол-во Месяцев с продажами выше среднего
+       long aboveAverage = 0;
+        for (long sale : sales) {
+            if (sale < averageSales(sales)) {
+                aboveAverage += 1;
+            }
+        }
+        return aboveAverage;
     }
-
-    public long aboveAverageSale(long[] sales) { // Месяцы с продажами выше среднего
-        long sum = 0;
-        long average;
-        for (int i = 0; i < sales.length; i++) {
-            sum += sales[i];
+    public  long belowAverageSale(long[]sales){ // Кол-во месяцев с продажами ниже среднего
+        long belowAverage = 0;
+        for (long sale : sales ) {
+           if ( sale > averageSales(sales)){
+            belowAverage += 1;
+            }
         }
-        average = sum / sales.length;
-
-
-        return average;
-
-
+        return belowAverage ;
     }
 }
