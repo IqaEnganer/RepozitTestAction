@@ -31,7 +31,7 @@ public class StatsService {
         }
         return sum;
     }
-     public long averageSales(long[] sales) { // Средние продажи за 12 месяцев
+    public long averageSales(long[] sales) { // Средние продажи за 12 месяцев
              long averageSales = sumAllSales(sales) /sales.length;
              return averageSales;
         }
@@ -45,7 +45,7 @@ public class StatsService {
         }
         return aboveAverage;
     }
-    public  long belowAverageSale(long[]sales){ // Кол-во месяцев с продажами ниже среднего
+    public long belowAverageSale(long[] sales){ // Кол-во месяцев с продажами ниже среднего
         long belowAverage = 0;
         for (long sale : sales ) {
            if ( sale > averageSales(sales)){
